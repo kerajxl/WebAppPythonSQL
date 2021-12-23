@@ -1,0 +1,19 @@
+CREATE TABLE User (
+    ID          INTEGER           PRIMARY KEY
+                              AUTOINCREMENT,
+    UserName    VARCHAR (100) UNIQUE
+                              NOT NULL,
+    Password    VARCHAR (100) NOT NULL
+                              UNIQUE,
+    CreatedDate DATETIME      NULL 
+);
+
+DROP TABLE User
+
+CREATE TRIGGER insert_createdDate AFTER INSERT ON User
+BEGIN
+    UPDATE User SET CreatedDate = DATETIME() WHERE ID = last_insert_rowid();
+END;
+
+INSERT INTO CryptoDB.User (ID, UserName, Password)
+VALUES (NULL,"Jaro69","Crypto69")
