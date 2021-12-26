@@ -1,19 +1,69 @@
-CREATE TABLE User (
-    ID          INTEGER           PRIMARY KEY
-                              AUTOINCREMENT,
-    UserName    VARCHAR (100) UNIQUE
-                              NOT NULL,
-    Password    VARCHAR (100) NOT NULL
+CREATE TABLE USERS (
+    USER_ID      INTEGER      PRIMARY KEY AUTOINCREMENT
+                              NOT NULL
                               UNIQUE,
-    CreatedDate DATETIME      NULL 
+    LOGIN        VARCHAR (15) NOT NULL
+                              UNIQUE,
+    PASSWORD     VARCHAR (20) NOT NULL,
+    EMAIL        VARCHAR (40) NOT NULL
+                              UNIQUE,
+    DATE_CREATED DATE         NOT NULL
 );
 
-DROP TABLE User
 
-CREATE TRIGGER insert_createdDate AFTER INSERT ON User
+CREATE TABLE HISTORICAL_DATA (
+    CRYPTO_SYMBOL VARCHAR (10) NOT NULL,
+    DATE          DATE         NOT NULL,
+    HIGH          DOUBLE       NOT NULL,
+    LOW           DOUBLE       NOT NULL,
+    CLOSE         DOUBLE       NOT NULL,
+    VOLUME        DOUBLE       NOT NULL
+);
+
+CREATE TABLE ACTUAL_DATA (
+    CRYPTO_SYMBOL        UNIQUE
+                         NOT NULL,
+    PRICE         DOUBLE NOT NULL,
+    VOLUME_24H    DOUBLE NOT NULL,
+    MARKET_CAP    DOUBLE NOT NULL
+);
+CREATE TABLE CRYPTO_DICT (
+    CRYPT_SYMBOL VARCHAR (10) NOT NULL
+                              UNIQUE,
+    NAME         VARCHAR (40) UNIQUE
+                              NOT NULL,
+    TAG_MINING   VARCHAR (15) NOT NULL,
+    SUPPLY       DOUBLE       NOT NULL,
+    MAX_SUPPLY   DOUBLE       NOT NULL
+);
+
+CREATE TABLE TRANSACTIONS (
+    TRANS_ID      INTEGER      PRIMARY KEY
+                               AUTOINCREMENT,
+    USER_ID       INTEGER      NOT NULL,
+    DATE          DATE         NOT NULL,
+    CRYPTO_SYMBOL VARCHAR (15) NOT NULL,
+    PRICE         DOUBLE       NOT NULL,
+    AMOUNT        DOUBLE       NOT NULL,
+    QUANTITY      DOUBLE       NOT NULL
+);
+
+CREATE TABLE WALLETS (
+    USER_ID       INTEGER NOT NULL,
+    CRYPTO_SYMBOL INTEGER NOT NULL,
+    QUANTITY      DOUBLE  NOT NULL,
+    VALUE         DOUBLE  NOT NULL
+);
+
+
+
+CREATE TRIGGER insert_createdDate AFTER INSERT ON USERS
 BEGIN
-    UPDATE User SET CreatedDate = DATETIME() WHERE ID = last_insert_rowid();
+    UPDATE USERS SET DATE_CREATED = DATETIME() WHERE ID = last_insert_rowid();
 END;
 
-INSERT INTO CryptoDB.User (ID, UserName, Password)
-VALUES (NULL,"Jaro69","Crypto69")
+INSERT INTO CryptoDB.USERS (ID, USERNAME, PASSWORD, EMAIL)
+VALUES (NULL,"Jaro69","Crypto69", "lolo@wp.pl")
+
+
+
