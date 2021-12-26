@@ -25,7 +25,10 @@
             <a class="nav-link" aria-current="page" href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/prices">Actual prices</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/graph">Analysis</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
