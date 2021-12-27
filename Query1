@@ -55,8 +55,18 @@ CREATE TABLE WALLETS (
     VALUE         DOUBLE  NOT NULL
 );
 
-
-
+select strftime('%Y-%m-%d', y.date) as date, y.value from 
+(select x.w_date as date, x.wallet_value as value, rank () OVER ( PARTITION BY  strftime('%Y-%m-%d', x.w_date) ORDER BY x.w_date desc) as rank  
+from 
+(select  w.createddate as w_date , sum(w.value) as wallet_value
+from wallets w 
+left join users u on u.user_id = w.user_id
+ where u.user_id = 37
+ group by  w.createddate
+ order by 1 desc) x ) y
+ where y.rank = 1;
+ 
+ 
 CREATE TRIGGER insert_createdDate AFTER INSERT ON USERS
 BEGIN
     UPDATE USERS SET DATE_CREATED = DATETIME() WHERE ID = last_insert_rowid();
