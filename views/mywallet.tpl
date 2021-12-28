@@ -36,7 +36,7 @@ new Chart("myChart", {
   options: {
     title: {
       display: true,
-      text: "World Wide Wine Production 2018"
+      text: "Currently held assets"
     }
   }
 });
@@ -65,7 +65,7 @@ new Chart("myChart", {
   <div class="col-sm-11" "margin-top:50px">
 
     <br />
-    <table style="align=centre;width:100%">{{!data}}</table>
+    <table style="align=right;width:100%">{{!data}}</table>
 
 
 

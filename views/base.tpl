@@ -30,8 +30,14 @@
           <li class="nav-item">
             <a class="nav-link" href="/graph">Analysis</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/orderbefore">Buy/Sale</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/ranking">Ranking</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/mywallet">Wallet</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
