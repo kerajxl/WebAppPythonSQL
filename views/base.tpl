@@ -30,6 +30,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/graph">Analysis</a>
           </li>
+          % if login==True:
            <li class="nav-item">
             <a class="nav-link" href="/orderbefore">Buy/Sale</a>
           </li>
@@ -40,14 +41,16 @@
             <a class="nav-link" href="/mywallet">Wallet</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          % else:
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/createAccount">Register</a>
           </li>
+          % end
         </ul>
       </div>
     </div>
