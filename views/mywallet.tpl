@@ -1,3 +1,4 @@
+
 % rebase('base.tpl', title = 'wallet')
 
 <title>Bootstrap Example</title>
@@ -12,9 +13,33 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <body>
 
-<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
-<script>
+
+
+
+<section class="container">
+
+  <div class="one">
+   <div <div id="myDiv" style="width:800px;height:600px; margin-left: 250px;">
+     <script>
+         var wykr1 = {
+             x: {{!day}},
+             y: {{!price}},
+             type: 'scatter'
+                    };
+
+           var data = [wykr1];
+
+   Plotly.newPlot('myDiv', data);
+		</script>
+  </div>
+  
+  </div>
+ 
+ 
+ <div class="two">
+ <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+ <script>
 var xValues = {{!values}};
 var yValues = {{!labels}};
 var barColors = [
@@ -41,26 +66,15 @@ new Chart("myChart", {
   }
 });
 </script>
+ 
+ 
+ </div>
 
-</head>
-<body>
-<div id="chartContainer" style="height: 300px; width: 100%;">
-</div>
-<div id="myDiv" style="width:800px;height:600px; margin-left: 250px;">
 
-     <script>
-         var wykr1 = {
-             x: {{!day}},
-             y: {{!price}},
-             type: 'scatter'
-                    };
+</section>
 
-           var data = [wykr1];
 
-   Plotly.newPlot('myDiv', data);
-		</script>
-  </div>
-
+<section class="container">
   <h1>All transactions</h1>
   <div class="col-sm-11" "margin-top:50px">
 
@@ -70,6 +84,6 @@ new Chart("myChart", {
 
 
   </div>
-
+</section>
 </body>
 </html>
