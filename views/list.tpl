@@ -1,19 +1,14 @@
 % rebase('base.tpl', title = '')
-
-<div class="container">
-<br />
-  <h3>Choose crypto:</h3>
+<link rel="stylesheet" href="static/css/login.css">
+<div class="login-page">
+  <div class="form">
+  <h4 style="margin-bottom: 20px">Choose crypto:</h3>
   <form action="/graph" method="post">
-    <div class="form-group">
-      
       <select class="form-control" id="sel1" name="chosen">
-	    % for crypto in cryptos:
-		<option>{{!crypto}}</option>
-		% end 
+        % for crypto in cryptos:
+        <option>{{!crypto}}</option>
+        % end
       </select>
-      <br>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-   
- 
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px">Submit</button>
   </form>
+</div>

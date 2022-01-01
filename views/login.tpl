@@ -6,7 +6,7 @@
       <input type="text" placeholder="username" name = "login" formmethod = "post"/>
       <input type="password" placeholder="password" name = "password" formmethod = "post"/>
       <button>login</button>
-      <p class="message">Not registered? <a href="/createAccount">Create an account</a></p>
+      <p class="message">Not registered? <a href="/createAccount" style="color: #6e0366;">Create an account</a></p>
     </form>
   </div>
 </div>

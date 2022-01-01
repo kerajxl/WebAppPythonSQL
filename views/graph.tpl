@@ -10,29 +10,69 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 
-
 </head>
+
 <body>
 
 
-<br/>
-<b><h2 style="text-align:center;">{{!title}}</b></h2>
+  <br />
+  <b>
+    <h2 style="text-align:center; color: #FFF">{{!title}}
+  </b></h2>
 
- <div id="myDiv" style="width:800px;height:600px; margin-left: 250px;">
+  <div id="myDiv" style="width:800px;height:600px; margin-left: 250px;">
 
-	    <script>
-		      var wykr1 = {
-              x: {{!day}},
-              y: {{!price}},
-              type: 'scatter'
-                     };
+    <script>
+      var trace1 = {
+        x: {{!day}},
+        y: {{!price}},
+        type: 'scatter',
+        name: 'Close',
+        marker: {
+          color: "rgb(255, 255, 255)"
+        }
+      };
 
-            var data = [wykr1];
+      var trace2 = {
+        x: {{!day}},
+        y: {{!high}},
+        type: 'scatter',
+        name: 'High',
+        marker: {
+          color: "rgb(0, 255, 0)"
+        }
+      };
 
-		Plotly.newPlot('myDiv', data);
-		</script>
+      var trace3 = {
+        x: {{!day}},
+        y: {{!low}},
+        type: 'scatter',
+        name: 'Low',
+        marker: {
+          color: "rgb(255, 0, 0)"
+        }
+      };
+
+      var layout = {
+        plot_bgcolor: "rgba(0, 0, 0, 0.5)",
+        paper_bgcolor: "rgba(0, 0, 0, 0.5)",
+        xaxis: {
+      tickcolor: '#FFF'
+      },
+      font:{
+        color: "#FFF"
+      },
+      yaxis: {
+        tickcolor: '#FFF'
+      }
+      }
+      var data = [trace1, trace2, trace3];
+
+      Plotly.newPlot('myDiv', data, layout);
+    </script>
 
 
-</div>
+  </div>
 </body>
+
 </html>

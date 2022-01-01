@@ -25,8 +25,9 @@ def refresh_CMC_API():
     }
     headers = {
       'Accepts': 'application/json',
-      'X-CMC_PRO_API_KEY': '25bdeaa9-d947-4b43-83b5-f2ee7bb97197',
+      'X-CMC_PRO_API_KEY': '0338f88c-4dc5-4997-b9dd-a7dd973e4a0d',
     }
+#     '25bdeaa9-d947-4b43-83b5-f2ee7bb97197'
 
     session = Session()
     session.headers.update(headers)

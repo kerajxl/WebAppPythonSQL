@@ -1,0 +1,65 @@
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 500px; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+/*background: rgba( 255, 255, 255, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6px );
+-webkit-backdrop-filter: blur( 6px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );*/
+#myTable {
+  background-color: #6e0366;
+  width: 70%; /* Full-width */
+  /*border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 6px );
+  -webkit-backdrop-filter: blur( 6px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-success, .btn-danger {
+  padding: 14px 20px;
+}
+
+#myTable th {
+  text-align: center; /* Left-align text */
+  padding: 12px; /* Add padding */
+  color: #000000
+}
+
+#myTable td {
+  text-align: center; /* Left-align text */
+  padding: 12px; /* Add padding */
+  color: #FFFFFF
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+  color: #FFFFFF
+}
+
+#myTable tr.header {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+#myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #c705ba;
+}
