@@ -11,6 +11,7 @@ import json
 import requests
 from query import query
 import pandas as pd
+import sqlite3
 
 def yahoo_refresh():
     currency = 'USD'
@@ -80,7 +81,7 @@ def yahoo_refresh():
                                                                   (exs_df['High'][rows]),(exs_df['Low'][rows]),
                                                                   (exs_df['Close'][rows]),str(exs_df['Volume'][rows])))
             conn.commit()
-            conn.close() 
+        conn.close() 
     except:
         pass
 
